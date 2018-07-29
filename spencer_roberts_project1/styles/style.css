@@ -20,7 +20,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 /* SETUP END */
 
 /* FONTS START */
-.displayFont, h3, blockquote{
+.displayFont, h3, blockquote, .logo{
     font-family: 'Playfair Display', serif;
 }
 
@@ -29,44 +29,61 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 }
 
 h2{
-    font-size:.8rem;
+    font-size:.5rem;
     font-weight: 400;
     text-transform: uppercase;
-    letter-spacing: .25rem;
+    letter-spacing: .2rem;
     color: #999;
 }
 
 h3{
-    font-size: 2rem;
+    font-size: 1.4rem;
+}
+
+h4{
+    font-size: .7rem;
+}
+
+.logo{
+    font-size: 1.6rem;
 }
 
 p, a{
     color: #999;
-    font-size: .7rem;
-    line-height: 1.3rem;
+    font-size: .5rem;
+    line-height: 1rem;
     margin: 0;
 }
 
 strong{
     color: black;
-    font-weight: 600;
+    font-weight: 400;
+}
+
+/* Add class to text elements to force alignment */
+.alignLeft{
+    text-align: left;
 }
 
 blockquote{
     font-style: italic;
     font-weight: 400;
+    font-size: .8rem;
     line-height: 1.5rem;
 }
 /* FONTS END */
 
 .wrapper{
-    width: 60%;
+    width: 70vmax;
     margin: 0 auto;
 }
 
 /* BASE ELEMENTS */
 html{
-    font-family: 'Poppins', sans-serif
+    font-family: 'Poppins', sans-serif;
+
+    /* Fluid font sizing | scales based on viewport width and desired min/max font sizes*/
+    font-size: calc(16px + (22 - 16) * ((100vw - 320px) / (1440 - 320)));
 }
 
 body{
@@ -88,6 +105,11 @@ img{
     max-width: 100%;
 }
 
+img.portrait{
+    border-radius: 50%;
+
+}
+
 /* NAV */
 nav{
     width: 100%;
@@ -104,12 +126,11 @@ nav h1, nav ul{
 }
 nav ul{
     position: absolute;
-    top: 50%;
-    margin-top: 1.2rem;
+    /* margin-top: 50%; */
     list-style: none outside none;
     padding: 0;
     float: left;
-    transform: translateY(50%);
+    transform: translateY(70%);
 }
 nav h1{
     float: left;
@@ -126,8 +147,14 @@ nav ul:last-of-type{
 }
 nav li{
     float: left;
+    text-transform: uppercase;
+    font-size: 1.2rem;
     height: 100%;
     margin-right: 15px;
+}
+
+nav svg{
+    font-size: .7rem !important;
 }
 /* NAV END */
 
@@ -135,34 +162,81 @@ nav li{
 footer{
     background: #211F1F;
     color: #999;
-    padding: 4rem 0;
-}
-.footerBottom{
-    /* width: 100%; */
-    display: block;
-}
-.footerBottom .half{
-    float: none;
+    padding: 2rem 0;
 }
 
-footer input{
+footer a:hover{
+    transition: color .2s;
+}
+
+footer a:hover{
+    color: #EDEDED;
+}
+.footerBottom{
+    display: block;
+    clear: both;
+    /* width: 100%; */
+    padding: 2rem 0;
+    border-top: 1px solid #3B3A3A;
+}
+.footerBottom .half:last-of-type{
+    text-align: right;
+}
+
+.footerBottom svg {
+    width: 100%;
+    transition: color .2s;
+    padding: 0;
+}
+.footerBottom a{
+    font-size: .7rem;
+    margin: 0 .5rem;
+}
+.footerBottom svg path{
+    transition: color .2s;
+}
+.footerBottom svg:hover path{
+    color: #EDEDED;
+}
+
+footer li{
+    font-size: .75rem;
+}
+
+
+footer form{
+    border-bottom: 1px solid #3B3A3A;
+    transform: translateY(50%)
+}
+
+label, input::placeholder{
+    font-size: .75rem;
+    color: #999;
+}
+
+footer input, footer label{
     background-color: transparent;
     color: #999;
     border: none;
     outline: none;
-    border-bottom: 2px solid #999;
     padding-bottom: 5px;
     width: 75%;
     margin: 0;
+}
+
+footer input{
+    color: #EDEDED;
+    font-size: .75rem;
 }
 footer button{
     width: 20%;
     padding: 5px;
     background-color: transparent;
     border: none;
-    color: #999;
+    color: #EDEDED;
     margin: 0;
 }
+
 /* FOOTER END */
 
 /* LAYOUT */
@@ -175,6 +249,7 @@ footer button{
     float: left;
 }
 .half{
+    position: relative;
     width: 50%;
     float: left;
 }
@@ -220,21 +295,33 @@ footer button{
 
 .aboutUs .container{
     position: relative;
+    padding-left: 20%;
 }
 
 .aboutUs img:first-of-type{
-    border: 1rem solid white;
+    /* position: absolute; */
+    right: 0;
+    border: .5rem solid white;
+    width: 30vmax;
 }
 
 .aboutUs .stamp{
     position: absolute;
+    width: 18vmax;
     bottom: -30%;
-    left: -30%;
+    left: -10%;
 }
 
 /* SERVICES STYLING */
 .services .half{
     padding: 1rem;
+}
+
+.services .third{
+    /* <img src="./assets/home-3.jpeg" alt="Tropical Beachside Cliffs"> */
+    background: url("../assets/home-3.jpeg") center no-repeat;
+    background-size: cover;
+    min-height: 45vmax;
 }
 
 .services .twoThirds{
@@ -245,18 +332,28 @@ footer button{
     float: left;
 }
 .services .half .threeQuarter{
-    width: 90%;
-}
-.services .half h4{
-    margin-top: 0;
+    width: 85%;
 }
 .services .half .quarter{
-    width: 10%;
-    /* padding-left: 1rem; */
+    width: 15%;
+}
+.services .half h4, .services .half p{
+    margin-top: 0;
+    font-size: .5rem;
+}
+
+.services .half h4{
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+}
+
+.services .half p{
+    text-transform: initial;
+    line-height: 1rem;
 }
 
 /* TESTIMONIALS */
-.testimonials, .gallery{
+.testimonials, #home .gallery{
     background-color:#f1f1f1;
     background-image: 
     radial-gradient(circle at 100% 150%, #f1f1f1 24%, white 25%, white 28%, #f1f1f1 29%, #f1f1f1 36%, white 36%, white 40%, transparent 40%, transparent),
@@ -282,8 +379,18 @@ footer button{
 }
 .testimonials path{
     fill: transparent ;
-    stroke: gold;
+    stroke: #F4AA2B;
     stroke-width: 50px;
+    transition: fill .2s;
+}
+
+.testimonials svg{
+    width: .75rem !important;
+}
+
+.testimonials svg:hover path{
+    fill: #F4AA2B;
+    stroke: #F4AA2B;
 }
 
 .testimonials .author{
@@ -291,7 +398,7 @@ footer button{
 }
 
 /* GALLERY STYLING */
-.gallery{
+#home .gallery{
     text-align: center;
     padding: 6rem 0;
 }
@@ -301,16 +408,314 @@ footer button{
     padding: .5rem;
 }
 
+/* more specific gallery styling for alternate use */
+.gallery .third img{
+    width: 100%;
+}
+
+/* CONTACT US */
 .contactUs{
 }
+.contactUs .half:first-of-type{
+    background: url("../assets/home-10.jpeg") center no-repeat;
+    background-size: cover;
+    background-color: turquoise;
+    min-width: 50%;
+    min-height: 500px;
+    /* max-height: 1000px; */
+    /* height: auto; */
+}
 .contactUs .half:last-of-type{
-    padding: 6rem;
+    padding: 3rem 5rem;
 }
 .contactUs h3:last-of-type{
-    font-size: 1.5rem;
+    font-size: 1rem;
+    margin-top: 0;
+}
+
+.contactUs p:last-of-type{
+    margin-top: 2rem;
 }
 
 .contactUs h4{
-    color: #999
+    color: #999;
+}
+
+#contactForm input, #contactForm textarea{
+    border: none;
+    width: 100%;
+    margin: .5rem 0;
+    border-bottom: 2px solid #EDEDED;
+}
+
+#contactForm .third{
+    width: calc(33% - 1rem);
+}
+
+#contactForm .sectionHeader h3{
+    text-align: left;
+    padding-left: .5rem;
+    margin-left: 0;
+}
+
+#contactForm .third, #contactForm textarea, #contactForm button{
+    margin: .5rem;
+    /* set border radius to overide defualt borders in safari on ios */
+    border-radius: 0;
+}
+#contactForm input::placeholder, #contactForm textarea::placeholder{
+    color: #999;
+    font-size: .6rem;
+}
+
+#contactForm button{
+    position: relative;
+    background: transparent;
+    text-transform: uppercase;
+    border: none;
+    outline: none;
+    font-size: .45rem;
+    letter-spacing: .05rem;
+    font-weight: 400;
+    padding-bottom: .3rem;
+}
+#contactForm button:before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    border-bottom: 1px solid black;
+}
+textarea{
+    resize: none;
 }
 /* HOME STYLING END */
+
+/* BLOG STYLING START */
+#blog header{
+    background: url("../assets/blog-1.jpeg") fixed center no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+#blog main{
+    background-color: #EDEDED;
+}
+
+#blog section{
+}
+
+#blog section{
+    background: white;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem;
+    top: -4rem;
+    bottom: -4rem;
+}
+
+#blog .sectionHeader{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#blog h3{
+    margin: 0 auto;
+    max-width: 75%;
+    padding: 2rem 2rem 1rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+/* #blog h3:last-of-type{
+    text-align: left;
+    padding-left: .5rem;
+    margin-left: 0;
+} */
+#blog h3 + p, #blog h3 + p a, #blog h3 + p strong{
+    margin: 0 auto;
+    max-width: 75%;
+    padding: .5rem 0 2rem;
+    font-size: .5rem;
+    line-height: 2rem;
+    font-weight: 300;
+}
+
+#blog p{
+    font-size: .5rem;
+    display: block;
+    width: 100%;
+    margin: .5rem auto;
+}
+
+#blog .displayFont{
+    margin: .5rem 0;
+    text-align: left;
+    font-size: .7rem;
+}
+#blog .author.heading h4, #blog .author.heading p{
+    margin:0;
+}
+
+.author.heading{
+    position: relative;
+    clear: both;
+    height: 5rem;
+}
+
+.author.heading:before{
+    content: '';
+    margin-bottom: .5rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-bottom: 2px solid #EDEDED;
+}
+
+.relatedPosts{
+    padding: 1rem 0;
+}
+
+.relatedPosts img{
+    padding: 0;
+}
+
+.relatedPosts .third{
+    margin: 0 .5rem;
+    border-bottom: 2px solid #EDEDED;
+    padding: .5rem;
+    width: calc(33% - 1rem);
+    box-shadow: 0 0 0 0 transparent;
+    transition: box-shadow .3s ease-in-out;
+}
+.relatedPosts .third:hover{
+    box-shadow: 0px 15px 15px -10px #bbb;
+}
+
+.relatedPosts .third a{
+    font-size: .5rem;
+}
+
+.relatedPosts .sectionHeader h3, .comments .sectionHeader h3{
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.comments{
+    padding: 2rem;
+}
+.comments .threeQuarter, .comments .quarter{
+    float: left;
+    padding: .0 .5rem;
+    margin: .25rem auto;
+}
+
+.comments .quarter{
+    width: 17%;
+    background-color: white 
+}
+
+.comments .threeQuarter{
+    position: relative;
+    width: 83%;
+    background-color: #f1f1f1;
+}
+/* lil speech bubble bit*/
+.comments .threeQuarter:before{
+    content: '';
+    position: absolute;
+    top: 2.5vmin;
+    left: -2.5vmin;
+    height: 2.5vmin;
+    width: 2.5vmin;
+    background: linear-gradient(to bottom left, #f1f1f1 50%, transparent 50%);
+}
+
+.comments .author{
+    width: 100%;
+    display: block;
+}
+
+.comments .author p{
+    color: black;
+}
+
+.comments p .special {
+    color: #3ECCCB;
+    font-style: italic;
+}
+/* BLOG STYLING END */
+
+
+
+/* CONTACT PAGE START */
+
+#contact .row.half{
+    clear: both;
+    display: block;
+    width: 100%;
+    padding-right: 30vmax;
+    margin-bottom: 3rem;
+}
+#contact .banner:last-of-type{
+    background: url("../assets/contact-2.jpeg") center no-repeat;
+    background-size: cover;
+    height: 65vh;
+    margin: 2rem auto 0;
+}
+
+#contact section{
+    clear: both;
+    margin: 2rem auto;
+}
+
+#contactDetails{
+    min-height: 17rem;
+    margin: 0 auto;
+}
+
+#contactDetails .third{
+    position: relative;
+    margin: 0;
+    padding: 0 2rem;
+    /* width: calc(33% - 1rem); */
+}
+
+#contactDetails .third:nth-of-type(2){
+    position: relative;
+    /* margin: 0 1rem; */
+}
+
+#contactDetails .third:nth-of-type(2):before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-right: 2px solid #EDEDED;
+    border-left: 2px solid #EDEDED;
+}
+
+#contactDetails h4{
+    /* font-size: .7rem; */
+}
+
+#contact p{
+    font-size: 0.5rem;
+    line-height: 1rem;
+}
+
+#contact h3{
+    margin: .5rem auto;
+    /* font-size:  */
+}
+/* CONTACT PAGE END */
+
+/* MEDIA QUERIES */

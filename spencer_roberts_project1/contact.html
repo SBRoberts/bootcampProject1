@@ -15,54 +15,42 @@
         <nav>
             <div class="wrapper clearfix">
                 <ul class="clearfix">
-                    <li>
-                        <a href="./home.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="./about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="./reserve.html">Reserve</a>
-                    </li>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./reserve.html">Reserve</a></li>
                 </ul>
                 <h1 class="displayFont">Sunshine</h1>
                 <ul class="clearfix">
-                    <li>
-                        <a href="./blog.html">Blog</a>
-                    </li>
-                    <li>
-                        <a href="./contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-search"></i>
-                    </li>
-                    <li>
-                        <i class="fas fa-shopping-bag"></i>
-                    </li>
+                    <li><a href="./blog.html">Blog</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li><i class="fas fa-search"></i></li>
+                    <li><i class="fas fa-shopping-bag"></i></li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
-        <section id="contactDetails">
+        <section id="contactDetails" class="wrapper">
             <div class="row">
-                <h3>Contact Details</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero omnis velit eligendi minus esse consectetur?</p>
+                <div class="row half">
+                    <h3>Contact Details</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero omnis velit eligendi minus esse consectetur?</p>
+                </div>
                 <div class="row">
                     <div class="third">
                         <i class="fas fa-mobile-alt"></i>
-                        <h4>Phone:</h4>
+                        <h4 class="displayFont">Phone:</h4>
                         <p>Phone 01: +99 (0) 344 956 4050</p>
                         <p>Phone 02: +99 (0) 347 957 4757</p>
                     </div>
                     <div class="third">
                         <i class="fas fa-map-marker-alt"></i>
-                        <h4>Address</h4>
+                        <h4 class="displayFont">Address</h4>
                         <p>123 King Str, 4th Floor, Utral Hosue Building, Honolulu, Hawaii</p>
                     </div>
                     <div class="third">
                         <i class="fas fa-envelope"></i>
-                        <h4>Email</h4>
+                        <h4 class="displayFont">Email</h4>
                         <p>info@sunshinehotel.com</p>
                     </div>
                 </div>
@@ -83,11 +71,11 @@
                     </div>
                     <div class="third">
                         <label for="subject" class="visuallyhidden"></label>
-                        <input type="text" id="subject" placeholder="subject (optional)">
+                        <input type="text" id="subject" placeholder="Subject (optional)">
                     </div>
                     <label for="message"></label>
                     <div class="row">
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Here goes your message"></textarea>
                     </div>
                     <button>Send Message</button>
                 </form>
@@ -100,42 +88,25 @@
             <div class="half">
                 <div class="half">
                     <ul>
-                        <li>
-                            <a href="./siteMap.html"></a>Site Map</li>
-                        <li>
-                            <a href="./tandc.html">Terms & Conditions</a>
-                        </li>
-                        <li>
-                            <a href="./privacyPolicy.html">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a href="./help.html">Help</a>
-                        </li>
-                        <li>
-                            <a href="./affiliate.html">Affiliate</a>
-                        </li>
+                        <li><a href="./siteMap.html">Site Map</a></li>
+                        <li><a href="./tandc.html">Terms & Conditions</a></li>
+                        <li><a href="./privacyPolicy.html">Privacy Policy</a></li>
+                        <li><a href="./help.html">Help</a></li>
+                        <li><a href="./affiliate.html">Affiliate</a></li>
                     </ul>
                 </div>
                 <div class="half">
                     <ul>
-                        <li>
-                            <a href="./faq.html">FAQs</a>
-                        </li>
-                        <li>
-                            <a href="./blog.html">Blog</a>
-                        </li>
-                        <li>
-                            <a href="./location.html">Location</a>
-                        </li>
-                        <li>
-                            <a href="./press.html">Press</a>
-                        </li>
+                        <li><a href="./faq.html">FAQs</a></li>
+                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="./location.html">Location</a></li>
+                        <li><a href="./press.html">Press</a></li>
                     </ul>
                 </div>
             </div>
             <div class="half">
                 <form action="post">
-                    <label for="emailAddress visuallyhidden">Enter your email address and press enter</label>
+                    <label for="emailAddress">Sign up to get our newsletter</label>
                     <input type="email" id="emailAddress" placeholder="Your email...">
                     <button type="submit">
                         <i class="far fa-paper-plane"></i>
@@ -143,16 +114,25 @@
                 </form>
             </div>
         </div>
-        <div class="wrapper clearfix">
+        <div class="wrapper footerBottom clearfix">
             <div class="half">
                 <p>© 2018 Sunshine Hotel</p>
             </div>
             <div class="half">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
+                <a href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
         </div>
     </footer>
 </body>
+<!-- Font Awesome CDN -->
+<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
+crossorigin="anonymous"></script>
 </html>

@@ -22,11 +22,11 @@
         <nav>
             <div class="wrapper clearfix">
                 <ul class="clearfix">
-                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="./index.html">Home</a></li>
                     <li><a href="./about.html">About</a></li>
                     <li><a href="./reserve.html">Reserve</a></li>
                 </ul>
-                <h1 class="displayFont">Sunshine</h1>
+                <h1 class="logo">Sunshine</h1>
                 <ul class="clearfix">
                     <li><a href="./blog.html">Blog</a></li>
                     <li><a href="./contact.html">Contact</a></li>
@@ -141,7 +141,7 @@
                 </div>
             </div>
             <div class="third">
-                <img src="./assets/home-3.jpeg" alt="Tropical Beachside Cliffs">
+                <!-- <img src="./assets/home-3.jpeg" alt="Tropical Beachside Cliffs"> -->
             </div>
         </section>
         <section class="testimonials">
@@ -188,9 +188,8 @@
         </section>
         <div class="contactUs">
             <div class="half">
-                <div class="image">
-                    <img src="./assets/home-10.jpeg" alt="An arial view of a shallow tropical bay on a sunny afternoon">
-                </div>
+                <!-- <img src="./assets/home-10.jpeg" alt="An arial view of a shallow tropical bay on a sunny afternoon"> -->
+                <!-- <div class="image"></div> -->
             </div>
             <div class="half">
                 <h2>Information</h2>
@@ -204,11 +203,11 @@
         </div>
     </main>
     <footer>
-        <div class="wrapper">
+        <div class="wrapper footerTop">
             <div class="half">
                 <div class="half">
                     <ul>
-                        <li><a href="./siteMap.html"></a>Site Map</li>
+                        <li><a href="./siteMap.html">Site Map</a></li>
                         <li><a href="./tandc.html">Terms & Conditions</a></li>
                         <li><a href="./privacyPolicy.html">Privacy Policy</a></li>
                         <li><a href="./help.html">Help</a></li>
@@ -226,7 +225,7 @@
             </div>
             <div class="half">
                 <form action="post">
-                    <label for="emailAddress visuallyhidden">Enter your email address and press enter</label>
+                    <label for="emailAddress">Sign up to get our newsletter</label>
                     <input type="email" id="emailAddress" placeholder="Your email...">
                     <button type="submit"><i class="far fa-paper-plane"></i></button>
                 </form>
@@ -237,9 +236,15 @@
                 <p>© 2018 Sunshine Hotel</p>
             </div>
             <div class="half">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
+                <a href="">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
         </div>
     </footer>
@@ -250,14 +255,4 @@
     <!-- Font Awesome CDN -->
     <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-4oV5EgaV02iISL2ban6c/RmotsABqE4yZxZLcYMAdG7FAPsyHYAPpywE9PJo+Khy"
     crossorigin="anonymous"></script>
-
-    <script>
-        $(function(){
-            $('.main-carousel').flickity({
-                // options
-                cellAlign: 'left',
-                contain: true
-            });
-        });
-    </script>
 </html>
