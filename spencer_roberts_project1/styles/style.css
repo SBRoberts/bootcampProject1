@@ -340,9 +340,10 @@ footer button{
 
 .aboutUs .stamp{
     position: absolute;
-    width: 18vmax;
-    bottom: -30%;
-    left: -10%;
+    width: 17vmax;
+    bottom: -20%;
+    left: -5%;
+    transition: all .3s;
 }
 
 /* SERVICES STYLING */
