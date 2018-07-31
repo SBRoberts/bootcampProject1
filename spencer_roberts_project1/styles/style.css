@@ -171,6 +171,13 @@ nav li{
     height: 100%;
     margin-right: 15px;
 }
+nav a,.relatedPosts a{
+    font-weight: inherit;
+    transition: font-weight .3s;
+}
+nav a:hover, .relatedPosts a:hover{
+    font-weight: 700;
+}
 
 nav svg{
     font-size: .7rem !important;
