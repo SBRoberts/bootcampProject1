@@ -101,11 +101,13 @@ ul{
     list-style: none;
 }
 
-img{
+img:not(.portrait){
+    width: 100%;
     max-width: 100%;
 }
 
 img.portrait{
+    max-width: 100%;
     border-radius: 50%;
 
 }
@@ -186,17 +188,29 @@ footer a:hover{
     transition: color .2s;
 }
 
-footer a:hover{
+footer button path{
+    color: inherit;
+    transition: color .3s;
+}
+
+footer a:hover, footer form svg:hover, .footerBottom svg:hover path, footer input, footer button:hover path{
     color: #EDEDED;
 }
+
+footer form{
+    border: 2px solid transparent;
+    transition: border .3s;
+}
+
+footer form:focus-within input:focus{
+    border-bottom: 2px solid #999;
+} 
 
 footer form svg{
     color: #999;
     max-width: 15px;
 }
-footer form svg:hover{
-    color: #ededed;
-}
+
 .footerBottom{
     display: block;
     clear: both;
@@ -220,14 +234,10 @@ footer form svg:hover{
 .footerBottom svg path{
     transition: color .2s;
 }
-.footerBottom svg:hover path{
-    color: #EDEDED;
-}
 
 footer li{
     font-size: .75rem;
 }
-
 
 footer form{
     border-bottom: 1px solid #3B3A3A;
@@ -250,7 +260,6 @@ footer input, footer label{
 }
 
 footer input{
-    color: #EDEDED;
     font-size: .75rem;
 }
 footer button{
@@ -258,7 +267,6 @@ footer button{
     padding: 5px;
     background-color: transparent;
     border: none;
-    color: #EDEDED;
     margin: 0;
 }
 
@@ -505,7 +513,7 @@ footer button{
     background-size: cover;
     background-color: turquoise;
     min-width: 50%;
-    min-height: 500px;
+    min-height: 550px;
     /* max-height: 1000px; */
     /* height: auto; */
 }
@@ -530,6 +538,12 @@ footer button{
     width: 100%;
     margin: .5rem 0;
     border-bottom: 2px solid #EDEDED;
+    transition: border-color .3s;
+}
+
+#contactForm input:focus, #contactForm textarea:focus{
+    border-color: #999;
+    outline:none;
 }
 
 #contactForm .third{
@@ -562,6 +576,7 @@ footer button{
     letter-spacing: .05rem;
     font-weight: 400;
     padding-bottom: .3rem;
+    transition: all .3s;
 }
 #contactForm button:before{
     content: "";
@@ -572,6 +587,21 @@ footer button{
     transform: translateX(-50%);
     width: 80%;
     border-bottom: 1px solid black;
+    transition: all .2s;
+}
+
+#blog #contactForm button:hover{
+    box-shadow: 7px 7px 5px #ccc;
+}
+#blog #contactForm button:active{
+    box-shadow: 4px 4px 0px #ccc;
+}
+
+#contact #contactForm button:hover:before{
+    border-bottom: 2px solid black;
+}
+#contact #contactForm button:active{
+    font-weight: 600;
 }
 textarea{
     resize: none;
@@ -820,9 +850,12 @@ textarea{
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
+    .wrapper{
+        width: 85vmax;
+    }
     .third{
         display: block;
-        width: 100%;
+        width: 100% !important;
     }
     .half{
         display: block;
@@ -831,11 +864,74 @@ textarea{
 
     .twoThirds{
         display: block;
-        width: 100%;
+        width: 100% !important;
     }
+
+    .aboutUs .half{
+        position: relative;
+    }
+
+    .aboutUs .container{
+        padding: 1rem;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .aboutUs .stamp{
+        bottom: initial;
+        left: initial;
+        right: 20px;
+        top: -20px;
+    }
+
+    .services .twoThirds .half{
+        width: 50%;
+    }
+
+    footer .half{
+        width: 50%;
+    }
+
+    .testimonials .fa-chevron-left{
+        left: 10px;
+    }
+    .testimonials .fa-chevron-right{
+        right: 10px;
+    }
+    .author .third{
+        width: 33% !important;
+    }
+    .author .half{
+        width: 50%;
+    }
+
+    .author .twoThirds{
+        width: 66% !important;
+    }
+
 
 }
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    .wrapper{
+        width: 95vw;
+    }
+    .services .twoThirds .half{
+        width: 100%;
+    }
+    footer .half{
+        width: 100%;
+    }
+
+    footer .half > .half, .footerBottom .half{
+        width: 50%;
+    }
+
+    footer form{
+        transform: initial;
+    }
+    footer form input, footer form button{
+        margin: 10px 0;
+    }
 }
