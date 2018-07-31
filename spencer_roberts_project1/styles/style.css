@@ -24,10 +24,6 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
     font-family: 'Playfair Display', serif;
 }
 
-.bodyFont{
-    /* font-family: 'Poppins', sans-serif; */
-}
-
 h2{
     font-size:.5rem;
     font-weight: 400;
@@ -280,22 +276,21 @@ footer button{
 /* FOOTER END */
 
 /* LAYOUT */
+.quarter, .third, .half, .twoThirds, .threeQuarter{
+    position: relative;
+    float: left;
+}
 .quarter{
     width: 25%;
-    float: left;
 }
 .third{
     width: 33%;
-    float: left;
 }
 .half{
-    position: relative;
     width: 50%;
-    float: left;
 }
 .twoThirds{
     width: 66%;
-    float: left;
 }
 /* LAYOUT END */
 
@@ -307,7 +302,6 @@ footer button{
 }
 
 /* ABOUT US STYLING */
-
 .aboutUs{
     background: #EDEDED; 
     padding: 5rem 0 10rem;
@@ -339,7 +333,6 @@ footer button{
 }
 
 .aboutUs img:first-of-type{
-    /* position: absolute; */
     right: 0;
     border: .5rem solid white;
     width: 30vmax;
@@ -359,9 +352,6 @@ footer button{
 }
 
 .services .third{
-    /* <img src="./assets/home-3.jpeg" alt="Tropical Beachside Cliffs"> */
-    /* background: url("../assets/home-3.jpeg") center no-repeat; */
-    /* background-size: cover; */
     min-height: 45vmax;
     width: 40%
 }
@@ -375,12 +365,15 @@ footer button{
 .services .half .threeQuarter, .services .half .quarter{
     float: left;
 }
+
 .services .half .threeQuarter{
     width: 85%;
 }
+
 .services .half .quarter{
     width: 15%;
 }
+
 .services .half h4, .services .half p{
     margin-top: 0;
     font-size: .5rem;
@@ -413,7 +406,6 @@ footer button{
     background-size:50px 25px;
 
     text-align: center;
-    /* padding: 4rem 0; */
     padding: 0;
     padding-top: 6rem;
 }
@@ -502,11 +494,7 @@ footer button{
 
 .gallery .imgContainer:hover .overlay{
     opacity: .6;
-
 }
-/* .gallery img:hover:before{
-
-} */
 
 /* more specific gallery styling for alternate use */
 .gallery .third img{
@@ -514,16 +502,12 @@ footer button{
 }
 
 /* CONTACT US */
-.contactUs{
-}
 .contactUs .half:first-of-type{
     background: url("../assets/home-10.jpeg") center no-repeat;
     background-size: cover;
     background-color: turquoise;
     min-width: 50%;
     min-height: 550px;
-    /* max-height: 1000px; */
-    /* height: auto; */
 }
 .contactUs .half:last-of-type{
     padding: 3rem 5rem;
@@ -566,6 +550,7 @@ footer button{
 
 #contactForm .third, #contactForm textarea, #contactForm button{
     margin: .5rem;
+
     /* set border radius to overide defualt borders in safari on ios */
     border-radius: 0;
 }
@@ -574,6 +559,7 @@ footer button{
     font-size: .6rem;
 }
 
+/* Contact Form Button set to reletive to format the :before element, which is pos. absolute */
 #contactForm button{
     position: relative;
     background: transparent;
@@ -598,6 +584,7 @@ footer button{
     transition: all .2s;
 }
 
+/* Styling the contact form button on the blog vs. contact page */
 #blog #contactForm button:hover{
     box-shadow: 7px 7px 5px #ccc;
 }
@@ -611,6 +598,7 @@ footer button{
 #contact #contactForm button:active{
     font-weight: 600;
 }
+
 textarea{
     resize: none;
 }
@@ -625,9 +613,6 @@ textarea{
 
 #blog main{
     background-color: #EDEDED;
-}
-
-#blog section{
 }
 
 #blog section{
@@ -652,12 +637,8 @@ textarea{
     line-height: 2rem;
 }
 
-/* #blog h3:last-of-type{
-    text-align: left;
-    padding-left: .5rem;
-    margin-left: 0;
-} */
-#blog h3 + p, #blog h3 + p a, #blog h3 + p strong{
+/* Weirdly specifc styling on the blog gallary - did not want to add single-use classes  */
+#blog .gallery h3 + p, #blog .gallery h3 + p a, #blog .gallery h3 + p strong{
     margin: 0 auto;
     max-width: 75%;
     padding: .5rem 0 2rem;
@@ -732,6 +713,7 @@ textarea{
 .comments{
     padding: 2rem;
 }
+
 .comments .threeQuarter, .comments .quarter{
     float: left;
     padding: .0 .5rem;
@@ -748,6 +730,7 @@ textarea{
     width: 83%;
     background-color: #f1f1f1;
 }
+
 /* lil speech bubble bit*/
 .comments .threeQuarter:before{
     content: '';
@@ -785,10 +768,7 @@ textarea{
 }
 /* BLOG STYLING END */
 
-
-
 /* CONTACT PAGE START */
-
 #contact .row.half{
     clear: both;
     display: block;
@@ -817,14 +797,13 @@ textarea{
     position: relative;
     margin: 0;
     padding: 0 2rem;
-    /* width: calc(33% - 1rem); */
 }
 
 #contactDetails .third:nth-of-type(2){
     position: relative;
-    /* margin: 0 1rem; */
 }
 
+/* Adding two parallel lines on the middle div on the contact page */
 #contactDetails .third:nth-of-type(2):before{
     content: '';
     position: absolute;
@@ -836,10 +815,6 @@ textarea{
     border-left: 2px solid #EDEDED;
 }
 
-#contactDetails h4{
-    /* font-size: .7rem; */
-}
-
 #contact p{
     font-size: 0.5rem;
     line-height: 1rem;
@@ -847,7 +822,6 @@ textarea{
 
 #contact h3{
     margin: .5rem auto;
-    /* font-size:  */
 }
 /* CONTACT PAGE END */
 
@@ -912,12 +886,9 @@ textarea{
     .author .half{
         width: 50%;
     }
-
     .author .twoThirds{
         width: 66% !important;
     }
-
-
 }
 
 /* Landscape phones and down */
@@ -939,6 +910,7 @@ textarea{
     footer form{
         transform: initial;
     }
+
     footer form input, footer form button{
         margin: 10px 0;
     }
