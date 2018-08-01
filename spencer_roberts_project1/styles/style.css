@@ -559,6 +559,10 @@ footer button{
     font-size: .6rem;
 }
 
+#contactForm textarea {
+    height: 30vmin;
+}
+
 /* Contact Form Button set to reletive to format the :before element, which is pos. absolute */
 #contactForm button{
     position: relative;
@@ -776,6 +780,12 @@ textarea{
     padding-right: 30vmax;
     margin-bottom: 3rem;
 }
+#contact .banner:first-of-type{
+    background: url("../assets/contact-1.jpeg") fixed center no-repeat;
+    background-size: cover;
+    height: 65vh;
+    margin: 0 auto;
+}
 #contact .banner:last-of-type{
     background: url("../assets/contact-2.jpeg") center no-repeat;
     background-size: cover;
@@ -794,13 +804,8 @@ textarea{
 }
 
 #contactDetails .third{
-    position: relative;
     margin: 0;
     padding: 0 2rem;
-}
-
-#contactDetails .third:nth-of-type(2){
-    position: relative;
 }
 
 /* Adding two parallel lines on the middle div on the contact page */
